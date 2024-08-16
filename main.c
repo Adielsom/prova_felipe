@@ -1,60 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
-//Questão 2
 
-void multiplica_matrizes(int n, int matriz1[n][n], int matriz2[n][n], int resultado[n][n]);
+int soma_array(int array[], int tamanho);
 
 int main()
 {
-    int n;
+ // Questão 1 - Arrays
 
-    //Lendo o tamanho da matriz
-    printf("Digite o tamanho das matrizes (n x n) :\n");
-    scanf("%d", &n);
+ //Calculando as somas de um elemento de um array
 
-    int matriz1[n][n], matriz2[n][n], resultado[n][n];
+ int n;
 
-    //Lendo os elementos da primeira matriz
-    printf("Digite os elementos da primeira matriz (%d x %d):\n", n,n);
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
-            scanf("%d", &matriz1[i][j]);
-        }
-    }
+ // Lendo o tamanho do array
+ printf("Digite o tamanho do array: \n");
+ scanf("%d", &n);
 
-// lendo os elementos da segunda matriz
-    printf("Digite os elementos da segunda matriz (%d x %d):\n", n,n);
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
-            scanf("%d", &matriz2[i][j]);
-        }
-    }
+ int array[n];
 
-// Chamando as funçoes para multiplicar as matrizes
-    multiplica_matrizes(n, matriz1, matriz2, resultado);
+ //Lendo os elementos do array
 
-// Mostrando a matriz resultante
+ printf("Digite %d numeros inteiros:\n", n);
+ for (int i = 0; i < n; i++){
+    scanf("%d", &array[i]);
+ }
 
-    printf("Resultado da multiplicacao das matrizes:\n");
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
-            printf("%d",resultado[i][j]);
-        }
-        printf("\n");
-    }
+ // calculando a soma ultilizando a função soma_array
 
+ int soma = soma_array(array, n);
+
+ // Exibindo a soma dos elementos do array
+
+ printf("A soma dos elementos do array e: %d\n", soma);
     return 0;
 }
 
-//Implementação da função que multiplica duas matrizes
+//Implementação da função
 
-void multiplica_matrizes(int n, int matriz1[n][n], int matriz2[n][n], int resultado[n][n]){
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
-            resultado[i][j] = 0 ; //inicializa o elemento da matriz resultado
-            for (int k = 0; k < n; k++){
-                resultado[i][j] += matriz1[i][k] * matriz2[k][j];
-            }
-        }
+int soma_array(int array[], int tamanho){
+    int soma = 0;
+    for (int  i = 0; i < tamanho; i++){
+        soma += array[i];
     }
+
+    return soma;
 }
+
