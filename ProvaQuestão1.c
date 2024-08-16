@@ -5,7 +5,7 @@ int soma_array(int array[], int tamanho);
 
 int main()
 {
- // Quest„o 1 - Arrays
+ // Quest√£o 1 - Arrays
 
  //Calculando as somas de um elemento de um array
 
@@ -24,7 +24,7 @@ int main()
     scanf("%d", &array[i]);
  }
 
- // calculando a soma ultilizando a funÁ„o soma_array
+ // calculando a soma ultilizando a fun√ß√£o soma_array
 
  int soma = soma_array(array, n);
 
@@ -34,7 +34,7 @@ int main()
     return 0;
 }
 
-//ImplementaÁ„o da funÁ„o
+//Implementa√ß√£o da fun√ß√£o
 
 int soma_array(int array[], int tamanho){
     int soma = 0;
